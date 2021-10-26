@@ -12,10 +12,11 @@ services:
     depends_on:
       - postgres
     command: /bin/sh start.sh
-    restart: always
+    restart: on-failure
 
   postgres:
     image: postgres
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
+    restart: always
