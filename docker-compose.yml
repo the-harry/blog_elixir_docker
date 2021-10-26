@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile.development
+    ports:
+      - 4000:4000
+    volumes:
+      - .:/blog
+    depends_on:
+      - postgres
+    command: /bin/sh start.sh
+
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
