@@ -12,6 +12,7 @@ services:
     depends_on:
       - postgres
     command: /bin/sh start.sh
+    restart: always
 
   postgres:
     image: postgres
