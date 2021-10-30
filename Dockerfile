@@ -1,6 +1,6 @@
 FROM elixir:1.12.3-alpine AS build
 
-RUN apk add --no-cache build-base npm git py-pip
+RUN apk add --no-cache build-base npm git py-pip libstdc++6
 
 WORKDIR /blog
 
